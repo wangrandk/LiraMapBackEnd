@@ -19,5 +19,5 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
-          docker-compose -f ./lira_backend_api/deploy/docker-compose.yml --project-directory --build
+          docker-compose -f ./lira_backend_api/deploy/docker-compose.yml --project-directory . up --build
       shell: bash
