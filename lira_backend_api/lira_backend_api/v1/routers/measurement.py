@@ -22,20 +22,20 @@ router = APIRouter(prefix="/measurement")
 
 
 # KT: Should be migrated over
-@router.get("/types", response_model=List[MeasurementTypes])
-async def get_measurement_types(db: Connection = Depends(get_connection)):
-    results = await measurement_types(db)
+# @router.get("/types", response_model=List[MeasurementTypes])
+# async def get_measurement_types(db: Connection = Depends(get_connection)):
+#     results = await measurement_types(db)
 
-    if results is None:
-        raise HTTPException(status_code=500, detail="Something went wrong")
+#     if results is None:
+#         raise HTTPException(status_code=500, detail="Something went wrong")
 
-    results_modified = list()
+#     results_modified = list()
 
-    for result in results:
-        result_dict = dict(result._mapping.items())
-        results_modified.append(MeasurementTypes(*result_dict.values()))
+#     for result in results:
+#         result_dict = dict(result._mapping.items())
+#         results_modified.append(MeasurementTypes(*result_dict.values()))
 
-    return results_modified
+#     return results_modified
 
 
 # KT: Should be migrated over
