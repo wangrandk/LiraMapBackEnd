@@ -14,13 +14,13 @@ RUN poetry config virtualenvs.create true
 
 # Copying requirements of a project
 COPY ./lira_backend_api/pyproject.toml ./lira_backend_api/poetry.lock /app/src/
-WORKDIR /app/src
+WORKDIR /app/src/lira_backend_api
 
 # Installing requirements
 RUN poetry install
 
 # Copying actuall application
-COPY . /app/src/
+COPY . /app/src/lira_backend_api
 RUN poetry install
 
 CMD ["/usr/local/bin/python", "-m", "lira_backend_api"]
