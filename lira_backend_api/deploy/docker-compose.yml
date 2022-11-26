@@ -4,11 +4,11 @@ services:
   api:
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: ./deploy/Dockerfile
     image: lira_backend_api:${LIRA_BACKEND_API_VERSION:-latest}
     restart: always
     env_file:
     - .env
     
     ports:
-    - 8000:8000
+    - 8000:${API_PORT}
