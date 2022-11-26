@@ -14,11 +14,5 @@ jobs:
     name: test compose action
     steps:
     - uses: actions/checkout@v3
-    - uses: isbang/compose-action@v1.4.1
-    
-    - uses: ./
-      with:
-         compose-file: "./lira_backend_api/deploy/docker-compose.yml"        
-         services: api
-         up-flags: "--build"
-         compose-flags: "--project-directory"
+    - name: Build the stack
+      run: docker-compose -f deploy/docker-compose.yml --project-directory . up --build
