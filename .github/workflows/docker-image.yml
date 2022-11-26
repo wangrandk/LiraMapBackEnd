@@ -8,18 +8,19 @@ on:
     
   repository_dispatch:
     types: [test_result]
-
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
+    name: test compose action
     steps:
     - uses: actions/checkout@v3
-    - uses: isbang/compose-action@v1.4.1
+    - uses: actions/setup-node@v3
+      with:
+          node-version: 16
+    - run: npm install
+    - uses: ./
       with:
          compose-file: "./lira_backend_api/deploy/docker-compose.yml"        
-         services: lira_backend_api
+         services: api
          up-flags: "--build"
          compose-flags: "--project-directory"
