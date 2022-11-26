@@ -14,10 +14,8 @@ jobs:
     name: test compose action
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-          node-version: 16
-    - run: npm install
+    - uses: isbang/compose-action@v1.4.1
+    
     - uses: ./
       with:
          compose-file: "./lira_backend_api/deploy/docker-compose.yml"        
