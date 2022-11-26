@@ -21,3 +21,4 @@ jobs:
       with:
          compose-file: "./lira_backend_api/deploy/docker-compose.yml"        
          services: lira_backend_api
+         compose-flags: "--project-directory"
