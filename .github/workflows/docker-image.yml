@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the stack
-      run: docker-compose  --env-file lira_backend_api/deploy/.env  -f lira_backend_api/deploy/docker-compose.yml . up --build
+      run: docker-compose  --env-file lira_backend_api/deploy/.env  -f lira_backend_api/deploy/docker-compose.yml  up --build
