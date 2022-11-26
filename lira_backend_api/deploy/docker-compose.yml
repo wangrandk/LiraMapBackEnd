@@ -1,14 +1,16 @@
-version: '3.9'
+version: "3.8"
+
+volumes:
+  test_volume: {}
 
 services:
-  api:
-    build:
-      context: .
-      dockerfile: ./deploy/Dockerfile
-    image: lira_backend_api:${LIRA_BACKEND_API_VERSION:-latest}
-    restart: always
-    env_file:
-    - .env
-    
-    ports:
-    - 80:8000
+  helloworld:
+    image: hello-world
+    volumes:
+      - test_volume:/test:Z
+  helloworld2:
+    profiles: [profile-1]
+    image: hello-world
+  helloworld3:
+    profiles: [profile-2]
+    image: hello-world
