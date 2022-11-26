@@ -20,5 +20,6 @@ jobs:
     - uses: isbang/compose-action@v1.4.1
       with:
          compose-file: "./lira_backend_api/deploy/docker-compose.yml"   
+         services: api
          up-flags: "build"
          compose-flags: "--project-directory"
