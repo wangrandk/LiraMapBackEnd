@@ -19,5 +19,6 @@ jobs:
     - uses: actions/checkout@v3
     - uses: isbang/compose-action@v1.4.1
       with:
-         compose-file: "./lira_backend_api/deploy/docker-compose.yml"       
+         compose-file: "./lira_backend_api/deploy/docker-compose.yml"   
+         up-flags: "--build"
          compose-flags: "--project-directory"
