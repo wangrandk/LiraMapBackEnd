@@ -13,7 +13,7 @@ RUN pip install poetry==1.1.13
 RUN poetry config virtualenvs.create true
 
 # Copying requirements of a project
-COPY ./lira_backend_api/pyproject.toml ./lira_backend_api/poetry.lock /app/src/
+COPY pyproject.toml poetry.lock /app/src/
 WORKDIR /app/src
 
 # Installing requirements
