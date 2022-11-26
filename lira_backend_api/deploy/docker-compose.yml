@@ -4,7 +4,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: ./deploy/Dockerfile
+      dockerfile: ./lira_backend_api/deploy/Dockerfile
     image: lira_backend_api:${LIRA_BACKEND_API_VERSION:-latest}
     restart: always
     env_file:
