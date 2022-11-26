@@ -18,5 +18,5 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the stack
       run: |
-        echo $ENV_FILE  > .env
-        docker-compose  --env-file .env  -f ./lira_backend_api/deploy/docker-compose.yml up --build
+        echo $ENV_FILE  > ./lira_backend_api/.env
+        docker-compose  --env-file ./lira_backend_api/.env  -f ./lira_backend_api/deploy/docker-compose.yml --project-directory .. up --build
