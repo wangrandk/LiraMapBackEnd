@@ -20,5 +20,5 @@ jobs:
     - uses: isbang/compose-action@v1.4.1
       with:
          compose-file: "./lira_backend_api/deploy/docker-compose.yml"   
-         up-flags: "--build"
+         up-flags: "build"
          compose-flags: "--project-directory"
